@@ -1,0 +1,318 @@
+/* style.css */
+*{ box-sizing:border-box; }
+body{ margin:0; font-family: Arial, sans-serif; line-height:1.6; }
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+
+:root{
+  --max: 980px;
+  --ink: #111827;
+  --muted: #6b7280;
+  --blue: #2563eb;
+  --panel: rgba(255,255,255,.75);
+  --border: 1px solid rgba(17,24,39,.08);
+  --shadow: 0 12px 30px rgba(17,24,39,.08);
+  --r: 16px;
+}
+
+body{
+  color: var(--ink);
+  background: radial-gradient(1200px 600px at 50% 0%, #eef6ff 0%, #ffffff 55%, #ffffff 100%);
+}
+
+.site{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header{
+  border-bottom: var(--border);
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(8px);
+  padding: 14px 16px;
+  display:grid;
+  grid-template-columns: 1fr auto;
+  align-items:center;
+  gap: 12px;
+}
+
+nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-auto-flow: column;
+  gap: 14px;
+}
+nav a{
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+nav a:hover{ background: rgba(37,99,235,.10); }
+
+main{
+  padding: 26px 16px;
+  display:grid;
+  justify-content:center;
+}
+.container{
+  width: min(var(--max), 100%);
+  display:grid;
+  gap: 22px;
+}
+
+footer{
+  border-top: var(--border);
+  background: rgba(255,255,255,.55);
+  padding: 14px 16px;
+  text-align:center;
+  color:#666;
+}
+
+/* section title + blue underline */
+.section-title{
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+}
+.section-underline{
+  width: 52px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--blue);
+  margin: 10px auto 0;
+}
+
+/* ===== Home hero ===== */
+.hero2{
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 90px 0 90px;
+}
+.avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow:hidden;
+  border: 4px solid rgba(255,255,255,.9);
+  box-shadow: 0 10px 26px rgba(17,24,39,.12);
+}
+.avatar img{ width:100%; height:100%; object-fit:cover; }
+
+.hero2 h1{
+  margin: 0;
+  font-size: 46px;
+  font-weight: 900;
+}
+.hero2 h1 .blue{ color: var(--blue); }
+
+.hero2 p{
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+  max-width: 760px;
+}
+
+/* ===== Cards ===== */
+.card{
+  border: var(--border);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  border-radius: var(--r);
+  padding: 16px;
+  display:grid;
+  gap: 10px;
+}
+
+/* ===== Projects page list (stable thumbnails) ===== */
+.project-list{
+  display:grid;
+  gap: 18px;
+}
+.project-row{
+  border: var(--border);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  border-radius: var(--r);
+  padding: 14px;
+  display:grid;
+  grid-template-columns: 220px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.project-thumb{
+  width: 220px;
+  height: 150px;
+  border-radius: 14px;
+  overflow:hidden;
+  border: var(--border);
+  background:#f3f4f6;
+}
+.project-thumb img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.pill{
+  border: var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  width: fit-content;
+  background: rgba(255,255,255,.65);
+}
+.pill:hover{ background: rgba(37,99,235,.10); }
+
+.project-links{
+  display:grid;
+  grid-auto-flow: column;
+  justify-content:start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ===== Background timeline ===== */
+.timeline{
+  padding: 18px 10px 30px;
+}
+.timeline-line{
+  height: 3px;
+  background:#111827;
+  border-radius: 99px;
+  width:100%;
+  margin: 30px 0 0;
+  opacity: .9;
+}
+.milestones{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+.ms{
+  display:grid;
+  gap: 6px;
+  justify-items:center;
+  text-align:center;
+}
+.dot{
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background:#111827;
+}
+.ms small{ color: var(--muted); }
+
+/* ===== Contact centered ===== */
+.contact-main{
+  padding: 0 16px;
+  display: grid;
+  place-items: center;
+}
+.contact-panel{
+  width: min(720px, 100%);
+  padding: 60px 20px 70px;
+  text-align: center;
+  display: grid;
+  gap: 34px;
+}
+.contact-title{
+  margin: 0;
+  font-size: 40px;
+  font-weight: 900;
+}
+.contact-underline{
+  width: 52px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: var(--blue);
+}
+.contact-icons{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 50px;
+}
+.contact-item{
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+.icon-badge{
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: var(--border);
+  background: rgba(255,255,255,.65);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+.icon-label{
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  header{ grid-template-columns: 1fr; }
+  nav ul{ grid-auto-flow: row; }
+
+  .project-row{ grid-template-columns: 1fr; align-items: start; }
+  .project-thumb{ width: 100%; height: 200px; }
+
+  .milestones{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px){
+  .contact-icons{ grid-auto-flow: row; gap: 22px; }
+}
+/* ===== Hover animations ===== */
+
+/* nav hover: lift a bit */
+nav a{
+  transition: transform .15s ease, background .15s ease;
+}
+nav a:hover{
+  transform: translateY(-1px);
+}
+
+/* project rows (Projects page) */
+.project-row{
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.project-row:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(17,24,39,.10);
+}
+
+/* buttons */
+.pill{
+  transition: transform .15s ease, background .15s ease;
+}
+.pill:hover{
+  transform: translateY(-1px);
+}
+
+/* contact icons */
+.icon-badge{
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.contact-item:hover .icon-badge{
+  transform: translateY(-2px);
+  background: rgba(37,99,235,.12);
+  box-shadow: 0 10px 22px rgba(37,99,235,.18);
+}
+
+/* optional: subtle card hover if you use .card anywhere */
+.card{
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(17,24,39,.10);
+}
